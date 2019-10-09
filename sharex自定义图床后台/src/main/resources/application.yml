@@ -1,0 +1,30 @@
+spring:
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${serverInfo.uploadpath}
+  servlet:
+    multipart:
+      max-file-size: 10MB  #最大文件 100M
+      max-request-size: 10MB
+  jmx:
+    default-domain: sharex
+
+
+logging:
+  level:
+    root: info
+    com.wg.demo: debug
+  file: ../mybatis-demo.log
+
+serverInfo:
+  # baseurl项目部署后的访问地址
+  baseurl: http://192.168.1.188:8080/sharex/
+  #uploadpath为上传文件的保存路径
+  uploadpath: c:\sharex\uploadFile\
+server:
+  port: 8080
+  servlet:
+    context-path: /sharex
+  error:
+    path: /sharex/error
