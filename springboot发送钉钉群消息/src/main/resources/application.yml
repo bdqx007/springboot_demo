@@ -1,7 +1,7 @@
 
 spring:
   jmx:
-    default-domain: cnhisrecure
+    default-domain: dingding
 
 
 

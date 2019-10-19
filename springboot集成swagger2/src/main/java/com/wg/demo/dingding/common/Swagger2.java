@@ -18,9 +18,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class Swagger2  {
-
-
-
     @Bean
     public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
@@ -30,12 +27,11 @@ public class Swagger2  {
                 .paths(PathSelectors.any())
                 .build();
     }
-
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("发送丁丁群消息")
-                .description("send ding ding msg")
-                .termsOfServiceUrl("spring boot ")
+                .title("swagger在线文档")
+                .description("spring boot use swagger2 document")
+                .termsOfServiceUrl("swagger2")
                 .version("1.0")
                 .build();
     }

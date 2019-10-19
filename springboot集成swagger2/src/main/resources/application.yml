@@ -1,0 +1,12 @@
+spring:
+  jmx:
+    default-domain: demo
+server:
+  port: 8080
+  servlet:
+    context-path: /demo
+
+
+
+
+
