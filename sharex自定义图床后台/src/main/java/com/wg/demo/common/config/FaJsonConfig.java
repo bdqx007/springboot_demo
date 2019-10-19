@@ -15,7 +15,6 @@ import java.nio.charset.StandardCharsets;
 import java.sql.Timestamp;
 
 
-
 @Configuration
 public class FaJsonConfig implements WebMvcConfigurer {
 

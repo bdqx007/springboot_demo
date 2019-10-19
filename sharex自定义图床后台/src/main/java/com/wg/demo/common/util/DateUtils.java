@@ -38,12 +38,15 @@ public class DateUtils {
     private static SimpleDateFormat sdf8 = new SimpleDateFormat("yyyyMM");
     private static SimpleDateFormat sdf9 = new SimpleDateFormat("yyyy-MM-dd");
     private static SimpleDateFormat sdf10 = new SimpleDateFormat("yyyy-MM");
+
     public static String getDayStr(Date date) {
         return sdf5.format(date);
     }
+
     public static String getDateStr(Date date) {
         return sdf4.format(date);
     }
+
     public static String getDateString(Date date) {
         return sdf1.format(date);
     }
@@ -79,7 +82,7 @@ public class DateUtils {
         return sdf9.format(time.getTime());
     }
 
-    public static String[] getTodayStr(){
+    public static String[] getTodayStr() {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String dateNowStr = sdf.format(new Date());
         return new String[]{dateNowStr + " 00:00:00", dateNowStr + " 23:59:59"};

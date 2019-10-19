@@ -23,15 +23,15 @@ public class FileUploadService {
     @Autowired
     private LocalConfig localConfig;
 
-    public ResultMsg uploadFile(String sendId, MultipartFile file){
+    public ResultMsg uploadFile(String sendId, MultipartFile file) {
         String sepa = File.separator;
         String fileName = file.getOriginalFilename();
         String fileNameSuffix = fileName.substring(fileName.lastIndexOf(".") + 1);
-        String fileNamePrefix = fileName.substring(0 , fileName.lastIndexOf("."));
-        String timeStr = ""+ DateUtils.getDayStr(new Date());
-        String newFileName = fileNamePrefix + "-"+ sendId +"-"+ DateUtils.getDateStr(new Date())  + "." + fileNameSuffix;
+        String fileNamePrefix = fileName.substring(0, fileName.lastIndexOf("."));
+        String timeStr = "" + DateUtils.getDayStr(new Date());
+        String newFileName = fileNamePrefix + "-" + sendId + "-" + DateUtils.getDateStr(new Date()) + "." + fileNameSuffix;
         String baseFilePath = localConfig.getUploadFilePath();
-        String path = baseFilePath + sendId+ sepa + timeStr;
+        String path = baseFilePath + sendId + sepa + timeStr;
 
         createDirectory(path);
 
@@ -39,8 +39,8 @@ public class FileUploadService {
         try {
             //将上传文件写到服务器上指定的文件
             file.transferTo(targetFile);
-            String saveUrl =localConfig.getBaseurl()+ sendId+ "/" + timeStr + "/" + newFileName;
-            FileInfo fileInfo = new FileInfo(newFileName,fileNameSuffix,saveUrl,fileName);
+            String saveUrl = localConfig.getBaseurl() + sendId + "/" + timeStr + "/" + newFileName;
+            FileInfo fileInfo = new FileInfo(newFileName, fileNameSuffix, saveUrl, fileName);
             return ResultMsg.getMsg(fileInfo);
         } catch (IOException e) {
             e.printStackTrace();
@@ -48,7 +48,7 @@ public class FileUploadService {
         }
     }
 
-    public void createDirectory(String directoryPath){
+    public void createDirectory(String directoryPath) {
         File targetFile = new File(directoryPath);
         if (!targetFile.exists()) {
             targetFile.mkdirs();

@@ -1,4 +1,5 @@
 package com.wg.demo.common.config;
+
 import lombok.Data;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,11 +24,12 @@ public class LocalConfig {
     @Value("${serverInfo.baseurl}")
     private String baseurl;
 
-    public Long getMaxFileSize(){
-        String str = maxfilesize.substring(0,maxfilesize.length()-2);
+    public Long getMaxFileSize() {
+        String str = maxfilesize.substring(0, maxfilesize.length() - 2);
         Long maxSize = 1024 * 1024 * Long.parseLong(str);
         return maxSize;
     }
+
     public LocalConfig() {
     }
 

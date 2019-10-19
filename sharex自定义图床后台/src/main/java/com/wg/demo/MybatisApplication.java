@@ -13,6 +13,7 @@ public class MybatisApplication extends SpringBootServletInitializer {
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
         return builder.sources(MybatisApplication.class);
     }
+
     public static void main(String[] args) {
         SpringApplication.run(MybatisApplication.class, args);
     }

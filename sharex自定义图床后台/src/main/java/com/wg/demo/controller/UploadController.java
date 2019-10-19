@@ -26,11 +26,11 @@ public class UploadController {
 
 
     @PostMapping("upload")
-    public ResultMsg uploadFile(String jessionids , MultipartFile file) {
-        if(jessionids == null || jessionids.isEmpty()){
+    public ResultMsg uploadFile(String jessionids, MultipartFile file) {
+        if (jessionids == null || jessionids.isEmpty()) {
             return ResultMsg.getFailedMsg("jessionids 不能为空");
         }
-        if(!jessionids.equals("9be51d2f-bb1a-4c61-b989-c3d126211d661570588000594"))
+        if (!jessionids.equals("9be51d2f-bb1a-4c61-b989-c3d126211d661570588000594"))
             return ResultMsg.getFailedMsg("jessionids 错误");
 
         long size = (long) file.getSize();

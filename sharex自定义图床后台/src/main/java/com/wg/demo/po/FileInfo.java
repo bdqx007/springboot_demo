@@ -9,13 +9,16 @@ import lombok.Data;
  */
 @Data
 public class FileInfo {
-    public FileInfo(){}
-    public FileInfo(String fileName, String fileType, String fileUrl, String oldFileName){
+    public FileInfo() {
+    }
+
+    public FileInfo(String fileName, String fileType, String fileUrl, String oldFileName) {
         this.fileName = fileName;
-        this.fileType= fileType;
+        this.fileType = fileType;
         this.fileUrl = fileUrl;
         this.originFileName = oldFileName;
     }
+
     public String fileName;
     public String fileType;
     public String fileUrl;

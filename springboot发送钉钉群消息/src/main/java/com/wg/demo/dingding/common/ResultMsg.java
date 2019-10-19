@@ -1,6 +1,6 @@
-package com.wg.demo.common;
+package com.wg.demo.dingding.common;
 
-
+import lombok.Data;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,6 +9,7 @@ import java.util.Map;
  * @Date: 2018/9/4 17:09
  * @todo
  */
+@Data
 public class ResultMsg {
     /**
      * result : success
@@ -50,18 +51,13 @@ public class ResultMsg {
         return msg;
     }
 
-    public static ResultMsg getStrMsg(String strMsg) {
-        ResultMsg msg = new ResultMsg();
-        msg.setResult(strMsg);
-        msg.setData(strMsg);
-        return msg;
-    }
-
     public static ResultMsg getMsg(Object data) {
         ResultMsg msg = new ResultMsg();
         msg.setData(data);
         return msg;
     }
+
+
 
 
     public Object getData() {
@@ -91,6 +87,7 @@ public class ResultMsg {
     public void setResultMsg(String resultMsg) {
         this.resultMsg = resultMsg;
     }
+
 
 
     public void setResultCode(int resultCode) {
